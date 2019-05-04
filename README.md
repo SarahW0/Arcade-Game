@@ -12,7 +12,7 @@ The 3rd project built for Udacity FRONT END Developer course
 3. Changable Player Sprite: The player can change the sprite on the pop-up window when the game is loaded or when the game is won 
 
 # Game Instruction
-1. Load the game
+1. The live version of game can be found [Here](https://ecommsupports.com/demo/ArcadeGame/)
 2. Choose the player sprite and game difficulty level, then click start button on the pop-up window
 3. Move the player by using the arrow keys on keyboard or clicking/touching the movement control button at right-bottom corner of the screen
 4. The player will be reset if it collides with an enemy
