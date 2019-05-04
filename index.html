@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Classic Arcade Game</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--My IE11 does not support main tag. So change main tag to div tag-->
+    <div class="container">
+      <canvas id="game-board"> </canvas>
+
+      <div class="modal-window">
+        <div class="control-menu">
+          <section class="win-panel">
+            <h2>YOU WIN!!!</h2>
+          </section>
+
+          <section class="control-menu-instruction">
+            <h2>Game Control</h2>
+            <p>
+              * Move the Player with Arrow keys on the keyboard or by clicking
+              the control buttons at the right bottom of screen with mouse
+            </p>
+            <p>* Once the player reaches the water, the game is won</p>
+            <p>* Once a the player collides with an enemy, the game is reset</p>
+          </section>
+
+          <section class="control-menu-players">
+            <h2>Choose Player Sprite</h2>
+            <div class="player" data-selected>
+              <input
+                type="radio"
+                id="char-boy"
+                name="players"
+                value="char-boy"
+                checked
+              />
+              <label for="char-boy"
+                ><img src="images/char-boy.png" alt="player char boy"
+              /></label>
+            </div>
+            <div class="player">
+              <input
+                type="radio"
+                id="char-cat-girl"
+                name="players"
+                value="char-cat-girl"
+              />
+              <label for="char-cat-girl"
+                ><img src="images/char-cat-girl.png" alt="player char cat girl"
+              /></label>
+            </div>
+            <div class="player">
+              <input
+                type="radio"
+                id="char-horn-girl"
+                name="players"
+                value="char-horn-girl"
+              />
+              <label for="char-horn-girl"
+                ><img
+                  src="images/char-horn-girl.png"
+                  alt="player char horn girl"
+              /></label>
+            </div>
+            <div class="player">
+              <input
+                type="radio"
+                id="char-pink-girl"
+                name="players"
+                value="char-pink-girl"
+              />
+              <label for="char-pink-girl"
+                ><img
+                  src="images/char-pink-girl.png"
+                  alt="player char pink girl"
+              /></label>
+            </div>
+            <div class="player">
+              <input
+                type="radio"
+                id="char-princess-girl"
+                name="drone"
+                value="char-princess-girl"
+              />
+              <label for="char-princess-girl"
+                ><img
+                  src="images/char-princess-girl.png"
+                  alt="player char pricess girl"
+              /></label>
+            </div>
+          </section>
+
+          <section class="control-menu-level">
+            <h2>Choose Game Level</h2>
+            <input
+              type="radio"
+              id="game-level-1"
+              name="game-levels"
+              value="game-level-1"
+              checked
+            />
+            <label for="game-level-1">EASY</label>
+            <input
+              type="radio"
+              id="game-level-2"
+              name="game-levels"
+              value="game-level-2"
+            />
+            <label for="game-level-2">HARD</label>
+          </section>
+
+          <div><button class="start-game">Start</button></div>
+        </div>
+      </div>
+
+      <div class="control-panel">
+        <button class="control-btn control-btn-left">🔻</button>
+        <button class="control-btn control-btn-up">🔺</button>
+        <button class="control-btn control-btn-down">🔻</button>
+        <button class="control-btn control-btn-right">🔺</button>
+      </div>
+    </div>
+    <script src="js/global.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+  </body>
+</html>

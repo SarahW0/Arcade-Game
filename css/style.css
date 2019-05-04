@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: "Exo 2", sans-serif;
+}
+
+body {
+  text-align: center;
+  overflow: hidden;
+}
+
+html,
+body,
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  position: relative;
+}
+
+/*Game Configuration Modal Start---------------------------------*/
+.modal-window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 9;
+  display: none;
+}
+
+.control-menu {
+  background: -webkit-linear-gradient(
+    315deg,
+    rgba(50, 6, 245, 0.9) 1%,
+    rgba(174, 22, 245, 0.9) 100%
+  );
+  background: -o-linear-gradient(
+    315deg,
+    rgba(50, 6, 245, 0.9) 1%,
+    rgba(174, 22, 245, 0.9) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(50, 6, 245, 0.9) 1%,
+    rgba(174, 22, 245, 0.9) 100%
+  );
+  padding: 0.5rem 1rem;
+  border: 10px ridge orange;
+  -webkit-box-shadow: 2px 2px 2px 4px rgb(58, 56, 56);
+  box-shadow: 2px 2px 2px 4px rgb(58, 56, 56);
+  color: rgb(218, 213, 213);
+  font-size: 0.9em;
+  max-width: 500px;
+}
+
+.control-menu h2 {
+  margin-bottom: 0.5rem;
+}
+
+.control-menu section {
+  margin-top: 0.8rem;
+}
+
+/*Game Player Image Selection Session*/
+.player {
+  display: inline-block;
+  padding: 0 20px;
+
+  -webkit-box-shadow: 0 1px 1px 2px rgb(255, 255, 255);
+
+  box-shadow: 0 1px 1px 2px rgb(255, 255, 255);
+  background-color: rgba(240, 218, 23, 0.726);
+
+  background-size: contain;
+  width: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60px;
+}
+
+.player:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.player[data-selected] {
+  background-image: url("../images/Selector.png");
+  background-color: green;
+  -webkit-box-shadow: 0 1px 4px 6px rgb(255, 255, 255);
+  box-shadow: 0 1px 4px 6px rgb(255, 255, 255);
+}
+
+.player input,
+.control-menu-level input {
+  opacity: 0;
+}
+
+.player img {
+  margin-top: -45px;
+  margin-left: -20px;
+  width: 300%;
+  cursor: pointer;
+}
+
+/*Game Level Session*/
+.control-menu-level label {
+  width: 100px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(102, 13, 153, 0.9);
+  cursor: pointer;
+}
+
+.control-menu-level input:checked + label {
+  color: rgba(102, 13, 153, 0.9);
+  background-color: rgb(231, 235, 38);
+  font-size: 1.1em;
+}
+
+/*START GAME BUTTON*/
+.start-game {
+  font-size: 1.5em;
+  padding: 20px 10px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  background-color: rgba(12, 16, 240, 0.726);
+}
+
+/*You win message*/
+.win-panel {
+  display: none;
+}
+
+.win-panel h2 {
+  font-size: 3em;
+  font-weight: bold;
+  color: rgb(231, 235, 38);
+  -webkit-animation-name: winning;
+  animation-name: winning;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/*Game Configuration Modal End---------------------------------*/
+
+/*Game Control Button Start------------------------------------*/
+.control-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.control-btn {
+  font-size: 40px;
+  color: blue;
+  position: absolute;
+  outline: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+.control-btn-up,
+.control-btn-down {
+  right: 70px;
+}
+
+.control-btn-up {
+  bottom: 120px;
+}
+
+.control-btn-down {
+  bottom: 0;
+}
+
+.control-btn-left,
+.control-btn-right {
+  bottom: 60px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.control-btn-left {
+  right: 130px;
+}
+
+.control-btn-right {
+  right: 10px;
+}
+
+@-webkit-keyframes winning {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes winning {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+/*Game Control Button End------------------------------------*/
+
+/*CSS Configuration for Smaller Screen------------------------*/
+@media only screen and (max-width: 750px) {
+  .control-panel {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  .start-game {
+    padding: 15px 10px;
+  }
+}
